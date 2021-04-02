@@ -27,5 +27,13 @@ services:
       - db:/var/lib/mysql
 #      - ./backup/backup.sql:/docker-entrypoint-initdb.d/backup.sql
 
+  web:
+    image: nginx
+    volumes:
+    - ./nginx:/etc/nginx
+    ports:
+    - "80:80"
+      
 volumes:
   db:
+  
